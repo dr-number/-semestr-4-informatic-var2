@@ -1,4 +1,6 @@
 from helpers import get_text_color, input_number, COLOR_WARNING, COLOR_GREEN, COLOR_FAIL
+import math
+
 _DEFAULT_START_VALUE = -2
 _DEFAULT_END_VALUE = 2.2
 _DEFAULT_STEP = 0.2
@@ -17,10 +19,23 @@ def init():
     end = input_number(f'Введите конечное значение: (по умолчанию {_DEFAULT_END_VALUE})', _DEFAULT_END_VALUE)
     step = input_number(f'Введите шаг: (по умолчанию {_DEFAULT_STEP})', _DEFAULT_STEP)
 
-    table = []
+    table = [
+        ['х', 'Формула', 'y']
+    ]
     
-    for i in range(start, end, step):
-        table.append([i, 0])
+    for x in range(start, end, step):
+        y, formul = '', ''
+
+        if 0 < x <= 1:
+            formul = f'√({x} + 2)' 
+            y = str(math.sqrt(x + 2))
+        elif x > 1:
+            formul = f'ln({x} - 1)'
+            y = str(math.log(x - 1))
+        elif x <= 0:
+            formul, y = '0'
+        
+        table.append([x, formul, y])
 
     print(table)
 
