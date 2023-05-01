@@ -18,7 +18,7 @@ _ARRAY_EX = {
     _EX_5: ex_5, 
     _EX_6: ex_6, 
     _EX_7: ex_7, 
-    _EX_8: ex_8, 
+    _EX_8: ex_8
 }
 
 def main():
