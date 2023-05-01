@@ -11,7 +11,7 @@ def init():
         f'        | √(x + 2),   если 0 < x <= 1\n'
         f'y(x) = <  ln(x - 1),  если x > 1\n'
         f'        | 0,          если x <= 0\n\n'
-        f'где - 2 <= x <= 2.2;  dx = 0.2\n\n'
+        f'где -2 <= x <= 2.2;  dx = 0.2\n\n'
         f'На печать вывести значения x и y в виде таблицы с заголовком\n'
     )
 
@@ -23,7 +23,8 @@ def init():
         ['х', 'Формула', 'y']
     ]
     
-    for x in range(start, end, step):
+    x = start
+    while start <= x <= end:
         y, formul = '', ''
 
         if 0 < x <= 1:
@@ -33,9 +34,10 @@ def init():
             formul = f'ln({x} - 1)'
             y = str(math.log(x - 1))
         elif x <= 0:
-            formul, y = '0'
+            formul, y = '0', '0'
         
         table.append([x, formul, y])
+        x += step
 
     print(table)
 
