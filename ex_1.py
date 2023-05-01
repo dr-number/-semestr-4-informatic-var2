@@ -1,9 +1,10 @@
-from helpers import get_text_color, input_number, COLOR_WARNING, COLOR_GREEN, COLOR_FAIL
+from helpers import get_text_color, input_number, COLOR_WARNING, COLOR_GREEN, COLOR_FAIL, COLOR_OKCYAN
 import math
 
 _DEFAULT_START_VALUE = -2
 _DEFAULT_END_VALUE = 2.2
 _DEFAULT_STEP = 0.2
+_FORMAT = '| {:30} | {:30} | {:30} |'
 
 def init():
     print(
@@ -19,25 +20,23 @@ def init():
     end = input_number(f'Введите конечное значение: (по умолчанию {_DEFAULT_END_VALUE})', _DEFAULT_END_VALUE)
     step = input_number(f'Введите шаг: (по умолчанию {_DEFAULT_STEP})', _DEFAULT_STEP)
 
-    table = [
-        ['х', 'Формула', 'y']
-    ]
-    
+    print(get_text_color(_FORMAT.format(*['х', 'Формула', 'y']), COLOR_WARNING))
     x = start
     while start <= x <= end:
         y, formul = '', ''
 
         if 0 < x <= 1:
             formul = f'√({x} + 2)' 
-            y = str(math.sqrt(x + 2))
+            y = math.sqrt(x + 2)
+            print(get_text_color(_FORMAT.format(*[x, formul, y]), COLOR_GREEN))
         elif x > 1:
             formul = f'ln({x} - 1)'
-            y = str(math.log(x - 1))
+            y = math.log(x - 1)
+            print(get_text_color(_FORMAT.format(*[x, formul, y]), COLOR_OKCYAN))
         elif x <= 0:
-            formul, y = '0', '0'
+            formul, y = '0', 0
+            print(_FORMAT.format(*[x, formul, y]))
         
-        table.append([x, formul, y])
-        x += step
 
-    print(table)
+        x += step
 

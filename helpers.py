@@ -1,5 +1,6 @@
 COLOR_GREEN = '\033[92m'
 COLOR_WARNING = '\033[93m'
+COLOR_OKCYAN = '\033[96m'
 COLOR_FAIL = '\033[91m'
 _COLOR_ENDC = '\033[0m'
 
@@ -24,25 +25,3 @@ def input_number(text: str, default_value: float)-> float:
             print(get_text_color(f"\"{number}\" - не число! Повторите ввод!", COLOR_FAIL))
             
     return 0.0
-
-def print_table(table):
-    if not table:
-        return
-
-    size_cols = []
-    head = table[0]
-    size = len(head)
-
-    for item in head:
-        size_cols.append(len(item))
-
-    if size <= 1:
-        return
-
-    for row in head:
-        for i in range(0, size):
-            if size_cols[i] < len(row[i]):
-                size_cols[i] = len(row[i])
-
-    for i in range(0, size):
-        size_cols[i] = size_cols[i] + 4
