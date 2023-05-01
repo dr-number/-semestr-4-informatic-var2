@@ -58,6 +58,7 @@ def init():
     start, end, step = get_init_data()
     print(get_text_color(_FORMAT.format(*['х', 'Формула', 'y']), COLOR_WARNING))
     x = start
+    count = 0
     while start <= x <= end:
         y, formul = '', ''
 
@@ -73,6 +74,8 @@ def init():
             formul, y = '0', 0
             print(_FORMAT.format(*[x, formul, y]))
         
-
+        count += 1
         x += step
 
+    print(f'\nКоличество элементов: {count}')
+    

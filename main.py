@@ -27,7 +27,7 @@ def main():
             "\nЛарионов гр. 210з. Информатика. Индивидуальное задание № 2. Вариант 14.\n"
             "Какую задачу выполнить: \n"
             f"{get_text_color(f'{_EX_1}) ', COLOR_WARNING)}Вычислить на заданном интервале значения функции\n"
-            f"{get_text_color(f'{_EX_2}) ', COLOR_WARNING)}\n"
+            f"{get_text_color(f'{_EX_2}) ', COLOR_WARNING)}Вычислить произведение всех элементов последовательности.\n"
             f"{get_text_color(f'{_EX_3}) ', COLOR_WARNING)}\n"
             f"{get_text_color(f'{_EX_4}) ', COLOR_WARNING)}\n"
             f"{get_text_color(f'{_EX_5}) ', COLOR_WARNING)}\n"
