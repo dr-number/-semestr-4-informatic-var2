@@ -1,4 +1,3 @@
-from tabulate import tabulate
 from helpers import get_text_color, input_number, COLOR_WARNING, COLOR_GREEN, COLOR_FAIL
 _DEFAULT_START_VALUE = -2
 _DEFAULT_END_VALUE = 2.2
@@ -18,8 +17,10 @@ def init():
     end = input_number(f'Введите конечное значение: (по умолчанию {_DEFAULT_END_VALUE})', _DEFAULT_END_VALUE)
     step = input_number(f'Введите шаг: (по умолчанию {_DEFAULT_STEP})', _DEFAULT_STEP)
 
-    # table = [[‘Aman’, 23],[‘Neha’, 25],[‘Lata’, 27]]
-    # print(tabulate(table))
+    table = []
     
     for i in range(start, end, step):
+        table.append([i, 0])
+
+    print(table)
 
