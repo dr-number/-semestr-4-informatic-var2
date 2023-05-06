@@ -1,4 +1,4 @@
-from helpers import get_text_color, input_number, COLOR_WARNING, COLOR_GREEN, COLOR_FAIL
+from helpers import get_text_color, input_number, print_matrix, COLOR_GREEN, COLOR_FAIL
 _DEFAULT_DIMENSION = 5
 _MAX_DIMENSION = 100
 
@@ -45,8 +45,5 @@ def init():
     matrix[dimension] = outer_rows
     matrix[index_middle][index_middle] = 0
 
-    
-
-
-            
-
+    print(get_text_color('\nКонечная матрица', COLOR_GREEN))
+    print_matrix(matrix=matrix, select_zero=True)
