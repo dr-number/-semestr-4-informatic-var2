@@ -1,0 +1,12 @@
+version: '3.7'
+
+services:
+  web:
+    container_name: individ_zadan_2_14
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    tty: true
+    command: python3 main.py
+    ports:
+      - '8888:8888'
