@@ -87,7 +87,9 @@ def create_matrix(rows: int, cols: int, min_value: int, max_value: int) -> list[
 def print_matrix(
     matrix: list[list[int]], 
     select_positive: bool = False, 
-    select_negative: bool = False):
+    select_negative: bool = False,
+    select_zero: bool = False,
+    ):
     if not matrix:
         print(get_text_color(f"Матрица пуста!", COLOR_FAIL))
         return
@@ -111,6 +113,8 @@ def print_matrix(
                 row.append(get_text_color(value, COLOR_FAIL))
             elif select_positive and value > 0:
                 row.append(get_text_color(value, COLOR_GREEN))
+            elif select_zero and value == 0:
+                row.append(get_text_color(value, COLOR_WARNING))
             else:
                 row.append(str(value))
 
