@@ -9,7 +9,7 @@ _DEFAULT_LESS_THAN = 0.3
 _DEFAULT_MIN_LESS_THAN = 0.1
 _DEFAULT_MAX_LESS_THAN = 0.9
 
-_FORMAT = '| {:30} | {:30} | {:30} | {:30} |  {:30} |'
+_FORMAT = '| {:10} | {:40} | {:30} | {:30} | {:30} |  {:30} |'
 
 def init():
     print(
@@ -27,15 +27,17 @@ def init():
 
     less_than = input_number(
         text=f'Найти числа которые меньше: (по умолчанию {_DEFAULT_LESS_THAN})', 
-        default_value=_DEFAULT_COUNT_ELEMENTS,
+        default_value=_DEFAULT_LESS_THAN,
         min=_DEFAULT_MIN_LESS_THAN,
         max=_DEFAULT_MAX_LESS_THAN
     )
 
     print(get_text_color(_FORMAT.format(*[
+        '№',
         'Формула', 
         'Значение', 
-        'Вычисление', 
+        'Вычисление (1)', 
+        'Вычисление (2)', 
         'Сравнение'
     ]), COLOR_WARNING))
 
@@ -50,14 +52,19 @@ def init():
             result_count_numbers.append(i)
 
         print(get_text_color(_FORMAT.format(*[
+            f'{i}',
             f'{k} * sin({x} / {i})', 
             f'{k} * sin({x/i})',
-            f'{k} * {math.sin(x/i)})',
+            f'{k} * {math.sin(x/i)}',
             f'{result}',
             f'{result} < {less_than}'
         ]), COLOR_GREEN if is_less_then_result else COLOR_WHITE))
 
     print(
+        f'\nПорядковые номера элементов последовательности, которые меньше {less_than}: '
+        f'{get_text_color(result_count_numbers, COLOR_GREEN)}'
+    )
+    print(
         f'Количество элементов последовательности, которые меньше {less_than}: '
-        f'{get_text_color(str(len(result_count_numbers)) ,COLOR_GREEN)}'
+        f'{get_text_color(str(len(result_count_numbers)), COLOR_GREEN)}'
     )
