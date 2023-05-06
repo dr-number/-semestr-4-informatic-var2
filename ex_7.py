@@ -38,16 +38,13 @@ def init():
     cols = len(matrix[0])
     for j in range(0, cols):
         row.append(_sum_positive_col(matrix=matrix, col=j))
-    result_1 = [row]
     
     print(get_text_color('\nПромежуточный результат (без функции Sin)', COLOR_WARNING))
-    print_matrix(matrix=result_1)
+    print(row)
 
     result_final = []
     for j in range(0, cols):
         result_final.append(math.sin(row[j]))
 
-    result_final = [result_final]
-
     print(get_text_color('\nИтоговый результат', COLOR_GREEN))
-    print_matrix(matrix=result_final)
+    print(result_final)
