@@ -35,10 +35,10 @@ def init():
         r_y = (2 * math.sin(y)) / (math.pow(math.cos(y), 3))
         print(_FORMAT.format(*[
             f'( sin({x}) + 2 ) / ( sin({x} + {_2_3_pi}) )',  
-            'Вычисление (1)',
-            'Вычисление (2)',
+            f'{math.sin(x) + 2} / sin({x + _2_3_pi})',
+            f'{math.sin(x) + 2} / {math.sin(x + _2_3_pi)}',
             f'{g_x}',
-            'R(y) = (2 * sin(y)) / (cos^3(y))',  
+            f'(2 * sin({y})) / (cos^3({y}))',  
             'Вычисление (1)',
             'Вычисление (2)',
             f'{r_y}',
