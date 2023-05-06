@@ -36,12 +36,11 @@ def init():
     rows = len(matrix)
     cols = len(matrix[0])
 
-    result_1 = []
-    for _ in range(0, rows):
-        row = []
-        for j in range(0, cols):
-            row.append(_sum_positive_col(matrix=matrix, col=j))
-        result_1.append(row)
+    row = []
+    for j in range(0, cols):
+        row.append(_sum_positive_col(matrix=matrix, col=j))
+    result_1 = [row]
+    
 
-    print(get_text_color('\nПромежуточная матрица (без функции Sin)', COLOR_WARNING))
+    print(get_text_color('\nПромежуточный результат (без функции Sin)', COLOR_WARNING))
     print_matrix(matrix=result_1)
