@@ -45,14 +45,14 @@ def input_number(text: str, default_value: float = None, min: float = None, max:
 def is_question(text: str)-> bool:
     return input(f'{get_text_color(text, COLOR_WARNING)} [Y/n]: ').lower() != 'n' 
 
-def create_matrix(rows: int, cols: int, min_value: int, max_value: int) -> list[list[int]]:
+def create_matrix(rows: int, cols: int, min_value: int, max_value: int):
     result = []
     is_hand = is_question('Ввести матрицу вручную?')
     if not is_hand:
-        for i in range(1, rows):
+        for i in range(0, rows):
             row = []
-            for j in range(1, cols):
-                row.append(random.uniform(min_value, max_value))
+            for j in range(0, cols):
+                row.append(int(random.uniform(min_value, max_value)))
             result.append(row)
         return result
 
@@ -69,13 +69,13 @@ def create_matrix(rows: int, cols: int, min_value: int, max_value: int) -> list[
         max=_MATRIX_MAX_COLS
     ))
 
-    for i in range(1, rows):
+    for i in range(0, rows):
         row = []
-        for j in range(1, cols):
+        for j in range(0, cols):
             row.append(
                 int(
                     input_number(
-                        text=f'Введите значение (ряд {i} из {rows}, столбец {j} из {cols}): ', 
+                        text=f'Введите значение (ряд {i + 1} из {rows}, столбец {j + 1} из {cols}): ', 
                         min=min_value,
                         max=max_value
                     )
@@ -85,7 +85,7 @@ def create_matrix(rows: int, cols: int, min_value: int, max_value: int) -> list[
     return result
 
 def print_matrix(
-    matrix: list[list[int]], 
+    matrix, 
     select_positive: bool = False, 
     select_negative: bool = False,
     select_zero: bool = False,
@@ -96,9 +96,11 @@ def print_matrix(
 
     rows = len(matrix)
     cols = len(matrix[0])
+    print(matrix[0])
 
     format_print = '| {:10} '*(cols + 1)
     format_print += '|'
+    print(format_print)
 
     header = ['']
     for j in range(1, cols):
