@@ -17,18 +17,18 @@ def init():
         f'Вычислить произведение всех элементов этой последовательности.\n'
     )
 
-    start = input_number(
+    start = int(input_number(
         text=f'Введите начальное значение: (по умолчанию {_DEFAULT_START_VALUE})', 
         default_value=_DEFAULT_START_VALUE,
         min=_DEFAULT_MIN_START_VALUE,
         max=_DEFAULT_MAX_START_VALUE
-    )
-    end = input_number(
+    ))
+    end = int(input_number(
         text=f'Введите конечное значение: (по умолчанию {_DEFAULT_END_VALUE})', 
         default_value=_DEFAULT_END_VALUE,
         min=_DEFAULT_MIN_END_VALUE,
         max=_DEFAULT_MAX_END_VALUE
-    )
+    ))
 
     print(get_text_color(_FORMAT.format(*[
         '№', 
