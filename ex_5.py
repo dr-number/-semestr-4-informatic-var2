@@ -39,8 +39,8 @@ def init():
             f'{math.sin(x) + 2} / {math.sin(x + _2_3_pi)}',
             f'{g_x}',
             f'(2 * sin({y})) / (cos^3({y}))',  
-            'Вычисление (1)',
-            'Вычисление (2)',
+            f'(2 * {math.sin(y)}) / ({math.cos(y)}^3)',  
+            f'{2 * math.sin(y)} / {math.pow(math.cos(y), 3)}',  
             f'{r_y}',
             'f = G(x) + R(y)'
         ]))
