@@ -42,5 +42,7 @@ def init():
             f'(2 * {math.sin(y)}) / ({math.cos(y)}^3)',  
             f'{2 * math.sin(y)} / {math.pow(math.cos(y), 3)}',  
             f'{r_y}',
-            'f = G(x) + R(y)'
+            f'{g_x + r_y}'
         ]))
+        y += step_y
+        x += step_x
