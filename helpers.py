@@ -5,6 +5,11 @@ COLOR_FAIL = '\033[91m'
 COLOR_WHITE = '\033[37m'
 _COLOR_ENDC = '\033[0m'
 
+_MATRIX_MIN_ROWS = 2
+_MATRIX_MAX_ROWS = 2
+_MATRIX_MIN_COLS = 10
+_MATRIX_MAX_COLS = 10
+
 def get_text_color(text: str, color: str)-> str:
     return f'{color}{text}{_COLOR_ENDC}'
 
@@ -31,3 +36,22 @@ def input_number(text: str, default_value: float, min: float = None, max: float 
             print(get_text_color(f"\"{number}\" - не число! Повторите ввод!", COLOR_FAIL))
             
     return 0.0
+
+def is_question(text: str)-> bool:
+    return input(f'{get_text_color(text, COLOR_WARNING)} [Y/n]: ').lower() != 'n' 
+
+def create_matrix(rows: int, cols: int):
+    is_hand = is_question('Ввести матрицу вручную?')
+    if is_hand:
+        rows = int(input_number(
+            text=f'Введите количество строк: (по умолчанию {rows})',
+            default_value=rows,
+            min=_MATRIX_MIN_ROWS,
+            max=_MATRIX_MAX_ROWS
+        ))
+        cols = int(input_number(
+            text=f'Введите количество строк: (по умолчанию {cols})',
+            default_value=cols,
+            min=_MATRIX_MIN_COLS,
+            max=_MATRIX_MAX_COLS
+        ))
