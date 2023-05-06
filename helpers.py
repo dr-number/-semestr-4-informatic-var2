@@ -42,8 +42,10 @@ def input_number(text: str, default_value: float = None, min: float = None, max:
             
     return 0.0
 
+
 def is_question(text: str)-> bool:
     return input(f'{get_text_color(text, COLOR_WARNING)} [Y/n]: ').lower() != 'n' 
+
 
 def create_matrix(rows: int, cols: int, min_value: int, max_value: int):
     result = []
@@ -82,6 +84,7 @@ def create_matrix(rows: int, cols: int, min_value: int, max_value: int):
             )
         result.append(row)
     return result
+
 
 def print_matrix(
     matrix, 
