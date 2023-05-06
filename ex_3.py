@@ -9,7 +9,7 @@ _DEFAULT_LESS_THAN = 0.3
 _DEFAULT_MIN_LESS_THAN = 0.1
 _DEFAULT_MAX_LESS_THAN = 0.9
 
-_FORMAT = '| {:10} | {:40} | {:30} | {:30} | {:30} |  {:30} |'
+_FORMAT = '| {:10} | {:40} | {:35} | {:30} | {:30} |  {:30} |'
 
 def init():
     print(
@@ -18,12 +18,12 @@ def init():
         'Найти количество элементов последовательности, которые меньше 0.3, и их порядковые номера.\n'
     )
 
-    count_elements = input_number(
+    count_elements = int(input_number(
         text=f'Введите количество элементов последовательности: (по умолчанию {_DEFAULT_COUNT_ELEMENTS})', 
         default_value=_DEFAULT_COUNT_ELEMENTS,
         min=_DEFAULT_MIN_COUNT_ELEMENTS,
         max=_DEFAULT_MAX_COUNT_ELEMENTS
-    )
+    ))
 
     less_than = input_number(
         text=f'Найти числа которые меньше: (по умолчанию {_DEFAULT_LESS_THAN})', 
