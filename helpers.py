@@ -8,9 +8,9 @@ COLOR_WHITE = '\033[37m'
 _COLOR_ENDC = '\033[0m'
 
 _MATRIX_MIN_ROWS = 2
-_MATRIX_MAX_ROWS = 2
-_MATRIX_MIN_COLS = 10
-_MATRIX_MAX_COLS = 10
+_MATRIX_MAX_ROWS = 12
+_MATRIX_MIN_COLS = 2
+_MATRIX_MAX_COLS = 12
 
 def get_text_color(text: str, color: str)-> str:
     return f'{color}{text}{_COLOR_ENDC}'
@@ -47,6 +47,18 @@ def is_question(text: str)-> bool:
 
 def create_matrix(rows: int, cols: int, min_value: int, max_value: int):
     result = []
+    rows = int(input_number(
+        text=f'Введите количество строк: (по умолчанию {rows})',
+        default_value=rows,
+        min=_MATRIX_MIN_ROWS,
+        max=_MATRIX_MAX_ROWS
+    ))
+    cols = int(input_number(
+        text=f'Введите количество столбцов: (по умолчанию {cols})',
+        default_value=cols,
+        min=_MATRIX_MIN_COLS,
+        max=_MATRIX_MAX_COLS
+    ))
     is_hand = is_question('Ввести матрицу вручную?')
     if not is_hand:
         for i in range(0, rows):
@@ -55,19 +67,6 @@ def create_matrix(rows: int, cols: int, min_value: int, max_value: int):
                 row.append(int(random.uniform(min_value, max_value)))
             result.append(row)
         return result
-
-    rows = int(input_number(
-        text=f'Введите количество строк: (по умолчанию {rows})',
-        default_value=rows,
-        min=_MATRIX_MIN_ROWS,
-        max=_MATRIX_MAX_ROWS
-    ))
-    cols = int(input_number(
-        text=f'Введите количество строк: (по умолчанию {cols})',
-        default_value=cols,
-        min=_MATRIX_MIN_COLS,
-        max=_MATRIX_MAX_COLS
-    ))
 
     for i in range(0, rows):
         row = []
@@ -96,20 +95,16 @@ def print_matrix(
 
     rows = len(matrix)
     cols = len(matrix[0])
-    print(matrix[0])
+    format_print = '| {:15} '*(cols+1) + '|'
 
-    format_print = '| {:10} '*(cols + 1)
-    format_print += '|'
-    print(format_print)
-
-    header = ['']
-    for j in range(1, cols):
-        header.append(f'[{j}]')
+    header = [get_text_color('   ', COLOR_WHITE)]
+    for j in range(0, cols):
+        header.append(get_text_color(f'[{j}]', COLOR_WHITE))
     print(format_print.format(*header))
 
-    for i in range(1, rows):
-        row = [f'[{j}]']
-        for j in range(1, cols):
+    for i in range(0, rows):
+        row = [get_text_color(f'[{i}]', COLOR_WHITE)]
+        for j in range(0, cols):
             value = matrix[i][j]
             if select_negative and value < 0:
                 row.append(get_text_color(value, COLOR_FAIL))
@@ -118,7 +113,7 @@ def print_matrix(
             elif select_zero and value == 0:
                 row.append(get_text_color(value, COLOR_WARNING))
             else:
-                row.append(str(value))
+                row.append(get_text_color(value, COLOR_WHITE))
 
-            print(format_print.format(*row))
+        print(format_print.format(*row))
 

@@ -16,5 +16,5 @@ def init():
         min_value=_MIN_VALUE,
         max_value=_MAX_VALUE
     )
-    print(get_text_color('Исходная матрица', COLOR_GREEN))
+    print(get_text_color('\nИсходная матрица', COLOR_GREEN))
     print_matrix(matrix=matrix, select_negative=True)
