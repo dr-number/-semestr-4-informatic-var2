@@ -30,7 +30,7 @@ def main():
             f"{get_text_color(f'{_EX_2}) ', COLOR_WARNING)}Вычислить произведение всех элементов последовательности.\n"
             f"{get_text_color(f'{_EX_3}) ', COLOR_WARNING)}Найти количество элементов последовательности, которые меньше 0.3\n"
             f"{get_text_color(f'{_EX_4}) ', COLOR_WARNING)}\n"
-            # f"{get_text_color(f'{_EX_5}) ', COLOR_WARNING)}Вычислить значения функции\n"
+            f"{get_text_color(f'{_EX_5}) ', COLOR_WARNING)}Вычислить значения функции\n"
             f"{get_text_color(f'{_EX_6}) ', COLOR_WARNING)}Дана матрицa B 3*3. Заменить отрицательные элементы матрицы нулями\n"
             f"{get_text_color(f'{_EX_7}) ', COLOR_WARNING)}Дана матрица A. Вычислить элементы массива Y по правилу.\n"
             f"{get_text_color(f'{_EX_8}) ', COLOR_WARNING)}Сформировать двумерный массив M таким образом, чтобы \"углы\" и \"центр\" были заполнены нулями, а остальные элементы должны быть равны 1\n"
