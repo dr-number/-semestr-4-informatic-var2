@@ -1,4 +1,5 @@
 from helpers import get_text_color, create_matrix, print_matrix, COLOR_GREEN, COLOR_WARNING
+import math
 
 _DEFAULT_ROWS = 3
 _DEFAULT_COLS = 5
@@ -33,14 +34,20 @@ def init():
     print(get_text_color('\nМатрица A', COLOR_GREEN))
     print_matrix(matrix=matrix)
 
-    rows = len(matrix)
-    cols = len(matrix[0])
-
     row = []
+    cols = len(matrix[0])
     for j in range(0, cols):
         row.append(_sum_positive_col(matrix=matrix, col=j))
     result_1 = [row]
     
-
     print(get_text_color('\nПромежуточный результат (без функции Sin)', COLOR_WARNING))
     print_matrix(matrix=result_1)
+
+    result_final = []
+    for j in range(0, cols):
+        result_final.append(math.sin(row[j]))
+
+    result_final = [result_final]
+
+    print(get_text_color('\nИтоговый результат', COLOR_GREEN))
+    print_matrix(matrix=result_final)
