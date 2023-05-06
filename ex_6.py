@@ -20,7 +20,7 @@ def init():
         return
 
     print(get_text_color('\nИсходная матрица', COLOR_GREEN))
-    print_matrix(matrix=matrix, select_negative=True)
+    print_matrix(matrix=matrix, select_negative=True, select_zero=True)
 
     rows = len(matrix)
     cols = len(matrix[0])
@@ -38,4 +38,4 @@ def init():
     if count_replace_elements == 0:
         print(get_text_color(f"\nВ исходной матрице нет отрицательных элементов!", COLOR_FAIL))
     else:
-        print(f"\nЗаменено {get_text_color(str(len(count_replace_elements)), COLOR_GREEN)} отрицательных элементов")
+        print(f"\nЗаменено {get_text_color(str(count_replace_elements), COLOR_GREEN)} отрицательных элементов")
