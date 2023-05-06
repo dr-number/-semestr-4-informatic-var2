@@ -2,6 +2,7 @@ COLOR_GREEN = '\033[92m'
 COLOR_WARNING = '\033[93m'
 COLOR_OKCYAN = '\033[96m'
 COLOR_FAIL = '\033[91m'
+COLOR_WHITE = '\033[37m'
 _COLOR_ENDC = '\033[0m'
 
 def get_text_color(text: str, color: str)-> str:

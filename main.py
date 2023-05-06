@@ -28,7 +28,7 @@ def main():
             "Какую задачу выполнить: \n"
             f"{get_text_color(f'{_EX_1}) ', COLOR_WARNING)}Вычислить на заданном интервале значения функции\n"
             f"{get_text_color(f'{_EX_2}) ', COLOR_WARNING)}Вычислить произведение всех элементов последовательности.\n"
-            f"{get_text_color(f'{_EX_3}) ', COLOR_WARNING)}\n"
+            f"{get_text_color(f'{_EX_3}) ', COLOR_WARNING)}Найти количество элементов последовательности, которые меньше 0.3\n"
             f"{get_text_color(f'{_EX_4}) ', COLOR_WARNING)}\n"
             f"{get_text_color(f'{_EX_5}) ', COLOR_WARNING)}\n"
             f"{get_text_color(f'{_EX_6}) ', COLOR_WARNING)}\n"
