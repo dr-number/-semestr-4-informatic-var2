@@ -1,5 +1,5 @@
 from helpers import (
-    get_text_color, input_number, print_matrix, COLOR_GREEN, COLOR_FAIL, COLOR_WHITE
+    get_text_color, input_number, COLOR_GREEN, COLOR_FAIL, COLOR_WHITE
 )
 _DEFAULT_DIMENSION = 5
 _MAX_DIMENSION = 100
