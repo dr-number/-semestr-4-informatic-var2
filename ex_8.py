@@ -1,4 +1,6 @@
-from helpers import get_text_color, input_number, print_matrix, COLOR_GREEN, COLOR_FAIL
+from helpers import (
+    get_text_color, input_number, print_matrix, COLOR_GREEN, COLOR_FAIL, COLOR_WHITE
+)
 _DEFAULT_DIMENSION = 5
 _MAX_DIMENSION = 100
 
@@ -13,6 +15,27 @@ def _input_odd_number(text: str, default_value: float = None, max: float = None)
             return number
         else:
             print(get_text_color(f"Число должно быть нечетным!", COLOR_FAIL))
+
+def _print_matrix(matrix):
+    if not matrix:
+        print(get_text_color(f"Матрица пуста!", COLOR_FAIL))
+        return
+
+    rows = len(matrix)
+    cols = len(matrix[0])
+    format_print = '| {:5} '*cols + '|'
+
+
+    for i in range(0, rows):
+        row = []
+        for j in range(0, cols):
+            value = matrix[i][j]
+            if value == 0:
+                row.append(get_text_color(value, COLOR_GREEN))
+            else:
+                row.append(get_text_color(value, COLOR_WHITE))
+
+        print(format_print.format(*row))
 
 def init():
     example = (
@@ -46,4 +69,4 @@ def init():
     matrix[index_middle][index_middle] = 0
 
     print(get_text_color('\nКонечная матрица', COLOR_GREEN))
-    print_matrix(matrix=matrix, select_zero=True)
+    _print_matrix(matrix=matrix)
