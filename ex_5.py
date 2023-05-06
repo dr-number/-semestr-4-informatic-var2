@@ -1,6 +1,6 @@
 from helpers import get_text_color, input_number, COLOR_WARNING, COLOR_GREEN
 import math
-_FORMAT = '| {:50} | {:20} | {:15} | {:35} | {:20} |'
+_FORMAT = '| {:50} | {:20} | {:25} | {:35} | {:25} | {:25} | {:25} |'
 
 def init():
     print(
@@ -21,15 +21,15 @@ def init():
     step_y = 0.25
     y = start_y
 
-    print("\n" + get_text_color(_FORMAT.format(*[
+    print("\n" + _FORMAT.format(*[
         'G(x) = ( sin(x) + 2 ) / ( sin(x + 2/3 * ПИ) )',  
         'G(x) Вычисление (1)',
-        'G(x) Результат',
+        f'{get_text_color("G(x) Результат", COLOR_GREEN)}',
         'R(y) = (2 * sin(y)) / (cos^3(y))',  
         'R(y) Вычисление (1)',
-        'R(y) Результат'
-        'f = G(x) + R(y)'
-    ]), COLOR_WARNING))
+        f'{get_text_color("R(y) Результат", COLOR_GREEN)}',
+        f'{get_text_color("f = G(x) + R(y)", COLOR_GREEN)}'
+    ]))
 
     _2_3_pi = round(2/3 * math.pi, 2)
     while -start_x <= x <= start_x and 1 <= y <= 2:
@@ -38,11 +38,11 @@ def init():
         print(_FORMAT.format(*[
             f'( sin({round(x, 2)}) + 2 ) / ( sin({round(x, 2)} + {round(_2_3_pi, 2)}) )',  
             f'{round(math.sin(x) + 2, 2)} / sin({round(x + _2_3_pi, 2)})',
-            f'{round(g_x)}',
+            f'{get_text_color(round(g_x), COLOR_GREEN)}',
             f'(2 * sin({round(y, 2)})) / (cos^3({round(y, 2)}))',  
             f'(2 * {round(math.sin(y), 2)}) / ({round(math.cos(y), 2)}^3)',  
-            f'{round(r_y)}',
-            f'{g_x + r_y}'
+            f'{get_text_color(round(r_y), COLOR_GREEN)}',
+            f'{get_text_color(g_x + r_y, COLOR_GREEN)}'
         ]))
         y += step_y
         x += step_x
