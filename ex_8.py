@@ -9,7 +9,7 @@ def _transpose(matrix):
 def _input_odd_number(text: str, default_value: float = None, max: float = None) -> float:
     while True:
         number = input_number(text=text, default_value=default_value, min=1, max=max)
-        if number % 2 == 0:
+        if number % 2 != 0:
             return number
         else:
             print(get_text_color(f"Число должно быть нечетным!", COLOR_FAIL))
@@ -36,13 +36,13 @@ def init():
 
     matrix = [[1] * dimension] * dimension
     outer_rows = [0] * dimension
-    index_middle = dimension / 2 + 1
+    index_middle = int(dimension / 2)
     outer_rows[index_middle] = 1
     matrix[0] = outer_rows
-    matrix[dimension] = outer_rows
+    matrix[dimension - 1] = outer_rows
     matrix = _transpose(matrix=matrix)
     matrix[0] = outer_rows
-    matrix[dimension] = outer_rows
+    matrix[dimension - 1] = outer_rows
     matrix[index_middle][index_middle] = 0
 
     print(get_text_color('\nКонечная матрица', COLOR_GREEN))
