@@ -45,7 +45,7 @@ def input_number(text: str, default_value: float = None, min: float = None, max:
 def is_question(text: str)-> bool:
     return input(f'{get_text_color(text, COLOR_WARNING)} [Y/n]: ').lower() != 'n' 
 
-def create_matrix(rows: int, cols: int, min_value: int, max_value: int):
+def create_matrix(rows: int, cols: int, min_value: int, max_value: int) -> list[list[int]]:
     result = []
     is_hand = is_question('Ввести матрицу вручную?')
     if not is_hand:
@@ -84,4 +84,35 @@ def create_matrix(rows: int, cols: int, min_value: int, max_value: int):
         result.append(row)
     return result
 
-    
+def print_matrix(
+    matrix: list[list[int]], 
+    select_positive: bool = False, 
+    select_negative: bool = False):
+    if not matrix:
+        print(get_text_color(f"Матрица пуста!", COLOR_FAIL))
+        return
+
+    rows = len(matrix)
+    cols = len(matrix[0])
+
+    format_print = '| {:10} '*(cols + 1)
+    format_print += '|'
+
+    header = ['']
+    for j in range(1, cols):
+        header.append(f'[{j}]')
+    print(format_print.format(*header))
+
+    for i in range(1, rows):
+        row = [f'[{j}]']
+        for j in range(1, cols):
+            value = matrix[i][j]
+            if select_negative and value < 0:
+                row.append(get_text_color(value, COLOR_FAIL))
+            elif select_positive and value > 0:
+                row.append(get_text_color(value, COLOR_GREEN))
+            else:
+                row.append(str(value))
+
+            print(format_print.format(*row))
+
