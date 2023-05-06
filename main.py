@@ -32,7 +32,7 @@ def main():
             f"{get_text_color(f'{_EX_4}) ', COLOR_WARNING)}\n"
             # f"{get_text_color(f'{_EX_5}) ', COLOR_WARNING)}Вычислить значения функции\n"
             f"{get_text_color(f'{_EX_6}) ', COLOR_WARNING)}Дана матрицa B 3*3. Заменить отрицательные элементы матрицы нулями\n"
-            f"{get_text_color(f'{_EX_7}) ', COLOR_WARNING)}\n"
+            f"{get_text_color(f'{_EX_7}) ', COLOR_WARNING)}Дана матрица A. Вычислить элементы массива Y по правилу.\n"
             f"{get_text_color(f'{_EX_8}) ', COLOR_WARNING)}\n"
         )
         select = input('Для выхода введите \'0\'\n')
