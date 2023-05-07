@@ -74,3 +74,10 @@
       <img src="https://github.com/dr-number/-semestr-4-informatic-var2/blob/master/for_read_me/ex_3/info.png">
    </p>
 </figure>
+
+<figure>
+   <p align="center">Результат с данными по условию задачи</p>
+   <p align="center">
+      <img src="https://github.com/dr-number/-semestr-4-informatic-var2/blob/master/for_read_me/ex_3/standart.png">
+   </p>
+</figure>
