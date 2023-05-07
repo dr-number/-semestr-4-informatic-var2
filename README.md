@@ -18,3 +18,9 @@
       <img src="https://github.com/dr-number/-semestr-4-informatic-var2/blob/master/for_read_me/ex_1/info.png">
    </p>
 </figure>
+
+<figure>
+   <p align="center">Данные по условию задачи
+      <img src="https://github.com/dr-number/-semestr-4-informatic-var2/blob/master/for_read_me/ex_1/standart.jpg">
+   </p>
+</figure>
