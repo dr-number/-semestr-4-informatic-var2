@@ -79,14 +79,14 @@ def init():
         result_array.append(result)
         print(_FORMAT.format(*[
             f'√{array_a[i]} - (({i} + {array_a[i]}) / {n})',
-            f'{cmath.sqrt(array_a[i])} - (({i + array_a[i]}) / {n})',
-            f'{cmath.sqrt(array_a[i])} - ({i + array_a[i] / n})',
+            f'{cmath.sqrt(array_a[i])} - ({i + array_a[i]} / {n})',
+            f'{cmath.sqrt(array_a[i])} - {i + array_a[i] / n}',
             f'{result}'
         ]))
 
     print(
         f'\n{get_text_color(f"Конечные данные:", COLOR_GREEN)}\n'
-        f'массив В = {get_text_color(array_a, COLOR_GREEN)}\n'
+        f'массив В = {get_text_color(result_array, COLOR_GREEN)}\n'
     )
 
 
