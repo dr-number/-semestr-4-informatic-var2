@@ -17,10 +17,9 @@ def _sum_positive_col(matrix, col)-> int:
 
 def init():
     print(
-        'Дана матрица A(3,5):\n'
-        'Вычислить элементы массива Y по правилу:\n'
+        f'{get_text_color("Дана матрица A(3,5):\nВычислить элементы массива Y по правилу:", COLOR_WARNING)}\n'
         f'{get_text_color("y[j] = Sin(x[j])", COLOR_GREEN)}, где\n'
-        'x[j] - сумма положительных элементов j-го столбца матрицы A.\n'
+        f'{get_text_color("x[j] - сумма положительных элементов j-го столбца матрицы A.", COLOR_WARNING)}\n'
     )
     matrix = create_matrix(
         rows=_DEFAULT_ROWS,
