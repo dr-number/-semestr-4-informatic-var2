@@ -39,3 +39,10 @@
       <img src="https://github.com/dr-number/-semestr-4-informatic-var2/blob/master/for_read_me/ex_1/error_custom_data.png">
    </p>
 </figure>
+
+**задание №2**
+<figure>
+   <p align="center">
+      <img src="https://github.com/dr-number/-semestr-4-informatic-var2/blob/master/for_read_me/ex_2/info.png">
+   </p>
+</figure>
