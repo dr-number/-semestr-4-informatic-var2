@@ -14,6 +14,20 @@ _MAX_COUNT_ARRAY = 50
 _MIN_VALUE_ARRAY = -20
 _MAX_VALUE_ARRAY = 20
 
+class CustomComplex(complex):
+    def __lt__(self, other):
+        return abs(self) < abs(other)
+    def __le__(self, other):
+        return abs(self) <= abs(other)
+    def __eq__(self, other):
+        return abs(self) == abs(other)
+    def __ne__(self, other):
+        return abs(self) != abs(other)
+    def __gt__(self, other):
+        return abs(self) > abs(other)
+    def __ge__(self, other):
+        return abs(self) >= abs(other)
+
 def _input_n(text: str, default_value: float = None, min: float = None, max: float = None) -> float:
     while True:
         number = input_number(text=text, default_value=default_value, min=min, max=max)
@@ -84,9 +98,19 @@ def init():
             f'{result}'
         ]))
 
+    max_elem = result_array[0]
+    for i in range(1, size):
+        try:
+            if result_array[i] > max_elem:
+                max_elem = result_array[i]
+        except Exception as e:
+            if CustomComplex(result_array[i]) > max_elem:
+                max_elem = result_array[i]
+
     print(
         f'\n{get_text_color(f"Конечные данные:", COLOR_GREEN)}\n'
         f'массив В = {get_text_color(result_array, COLOR_GREEN)}\n'
+        f'максимальный элемент массива В = {get_text_color(str(max_elem), COLOR_GREEN)}\n'
     )
 
 
