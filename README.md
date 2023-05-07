@@ -67,3 +67,10 @@
       <img src="https://github.com/dr-number/-semestr-4-informatic-var2/blob/master/for_read_me/ex_2/error_custom_data.png">
    </p>
 </figure>
+
+**задание №3**
+<figure>
+   <p align="center">
+      <img src="https://github.com/dr-number/-semestr-4-informatic-var2/blob/master/for_read_me/ex_3/info.png">
+   </p>
+</figure>
