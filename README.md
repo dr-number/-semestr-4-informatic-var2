@@ -123,3 +123,10 @@
       <img src="https://github.com/dr-number/-semestr-4-informatic-var2/blob/master/for_read_me/ex_4/error_custom_data.png">
    </p>
 </figure>
+
+<figure>
+   <p align="center">Результат с пользовательскими данными</p>
+   <p align="center">
+      <img src="https://github.com/dr-number/-semestr-4-informatic-var2/blob/master/for_read_me/ex_4/custom_data.png">
+   </p>
+</figure>
