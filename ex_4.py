@@ -1,9 +1,15 @@
 from helpers import get_text_color, input_number, is_question, COLOR_WARNING, COLOR_GREEN, COLOR_FAIL
+import random
 
 _DEFAULT_N = 18
 _MIN_N = -100
 _MAX_N = 100
 _DEFAULT_ARRAY = [0.1, -2.4, 12.56, -0.5, 0.4]
+_DEFAULT_COUNT_ARRAY = len(_DEFAULT_ARRAY)
+_MIN_COUNT_ARRAY = _DEFAULT_COUNT_ARRAY
+_MAX_COUNT_ARRAY = 50
+_MIN_VALUE_ARRAY = -20
+_MAX_VALUE_ARRAY = 20
 
 def _input_n(text: str, default_value: float = None, min: float = None, max: float = None) -> float:
     while True:
@@ -26,3 +32,29 @@ def init():
         min=_MIN_N,
         max=_MAX_N
     ))
+    array = _DEFAULT_ARRAY
+    if is_question("Хотите изменить исходный массив?"):
+        array = []
+        size = int(input_number(
+            text=f'Введите размер массива: (по умолчанию {_DEFAULT_COUNT_ARRAY})', 
+            default_value=_DEFAULT_COUNT_ARRAY,
+            min=_MIN_COUNT_ARRAY,
+            max=_MAX_COUNT_ARRAY
+        ))
+        if is_question("Хотите ввести массив вручную?"):
+            for i in range(0, size):
+                array.append(
+                    int(
+                        input_number(
+                            text=f'Введите значение {i + 1} из {size}', 
+                            min=_MIN_VALUE_ARRAY,
+                            max=_MAX_VALUE_ARRAY
+                        )
+                    )
+                )
+        else:
+            for i in range(0, size):
+                array.append(int(random.uniform(_MIN_VALUE_ARRAY, _MAX_VALUE_ARRAY)))
+
+
+
