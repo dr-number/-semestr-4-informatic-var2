@@ -39,9 +39,9 @@ def _input_n(text: str, default_value: float = None, min: float = None, max: flo
 def init():
     print(
        'Дан массив: ' + get_text_color("A = (" + ', '.join(str(x) for x in _DEFAULT_ARRAY) + ")", COLOR_GREEN) + '\n' 
-       f'Выдать на печать массив B , все элементы которого определяются по правилу\n'
+       f'{get_text_color("Выдать на печать массив B, все элементы которого определяются по правилу", COLOR_WARNING)}\n'
        f'{get_text_color("b[i] = √(a[i]) - ((i + a[i]) / N)", COLOR_GREEN)}, где {get_text_color("N = 18", COLOR_GREEN)}\n'
-       f'Определить значение максимального элемента массива B.\n'
+       f'{get_text_color("Определить значение максимального элемента массива B.", COLOR_WARNING)}\n'
     )
     n = int(_input_n(
         text=f'Введите целое число N: (по умолчанию {_DEFAULT_N})', 
