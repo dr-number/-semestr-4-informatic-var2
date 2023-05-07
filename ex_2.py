@@ -28,7 +28,7 @@ def init():
         default_value=_DEFAULT_END_VALUE,
         min=_DEFAULT_MIN_END_VALUE,
         max=_DEFAULT_MAX_END_VALUE
-    ))
+    )) + 1
 
     print(get_text_color(_FORMAT.format(*[
         '№', 
@@ -40,10 +40,11 @@ def init():
         'Сумма'
     ]), COLOR_WARNING))
     multiplikation = 1
+    i = 1
     for k in range(start, end):
         result = math.log(k*k - 4*k + 8)
         print(_FORMAT.format(*[
-            k,
+            i,
             f'ln({k}^2 - 4*{k} + 8)', 
             f'ln({k*k} - {4*k} + 8)', 
             f'ln({k*k - 4*k + 8})', 
@@ -52,6 +53,7 @@ def init():
             get_text_color(multiplikation * result, COLOR_OKCYAN),
         ]))
         multiplikation *= result
+        i += 1
 
     print(f'\nКоличество элементов: {get_text_color(end - start, COLOR_GREEN)}')
     print(f'Произведение всех элементов последовательности {get_text_color(multiplikation, COLOR_GREEN)}')
