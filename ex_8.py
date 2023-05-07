@@ -1,5 +1,5 @@
 from helpers import (
-    get_text_color, input_number, COLOR_GREEN, COLOR_FAIL, COLOR_WHITE
+    get_text_color, input_number, COLOR_GREEN, COLOR_WARNING, COLOR_FAIL, COLOR_WHITE
 )
 _DEFAULT_DIMENSION = 5
 _MAX_DIMENSION = 100
@@ -34,6 +34,10 @@ def _print_matrix(matrix):
         print(format_print.format(*row))
 
 def init():
+    text = (
+        'Сформировать двумерный массив M(n,n) (где n - нечетное число) таким образом, чтобы "углы" ' 
+        'и "центр" были заполнены нулями, а остальные элементы должны быть равны 1, т.е\n'
+    )
     example = (
         "    | 0 0 1 0 0 |\n"
         "    | 0 1 1 1 0 |\n"
@@ -42,8 +46,7 @@ def init():
         "    | 0 0 1 0 0 |\n"
     )
     print(
-        'Сформировать двумерный массив M(n,n) (где n - нечетное число) таким образом, чтобы "углы" ' 
-        'и "центр" были заполнены нулями, а остальные элементы должны быть равны 1, т.е\n'
+        f'{get_text_color(text, COLOR_WARNING)}\n'
         f'{get_text_color(example, COLOR_GREEN)}\n'
     )
 
