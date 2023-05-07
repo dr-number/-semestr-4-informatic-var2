@@ -56,5 +56,11 @@ def init():
             for i in range(0, size):
                 array.append(int(random.uniform(_MIN_VALUE_ARRAY, _MAX_VALUE_ARRAY)))
 
+    print(
+        f'\n{get_text_color(f"Исходные данные:", COLOR_WARNING)}\n'
+        f'N = {get_text_color(str(n), COLOR_GREEN)}\n'
+        f'массив = {get_text_color(array, COLOR_GREEN)}\n'
+    )
+
 
 
