@@ -3,7 +3,7 @@ from helpers import get_text_color, input_number, is_question, COLOR_WARNING, CO
 _DEFAULT_N = 18
 _MIN_N = -100
 _MAX_N = 100
-_DEFAULT_MATRIX = [0.1, -2.4, 12.56, -0.5, 0.4]
+_DEFAULT_ARRAY = [0.1, -2.4, 12.56, -0.5, 0.4]
 
 def _input_n(text: str, default_value: float = None, min: float = None, max: float = None) -> float:
     while True:
@@ -15,10 +15,10 @@ def _input_n(text: str, default_value: float = None, min: float = None, max: flo
 
 def init():
     print(
-       f'Дан массив: {get_text_color("A=(0.1, -2.4, 12.56, -0.5, 0.4)", COLOR_GREEN)}\n' 
+       'Дан массив: ' + get_text_color("A = (" + ', '.join(str(x) for x in _DEFAULT_ARRAY) + ")", COLOR_GREEN) + '\n' 
        f'Выдать на печать массив B , все элементы которого определяются по правилу\n'
        f'{get_text_color("b[i] = √(a[i]) - ((i + a[i]) / N)", COLOR_GREEN)}, где {get_text_color("N = 18", COLOR_GREEN)}\n'
-       f'Определить значение максимального элемента массива B.'
+       f'Определить значение максимального элемента массива B.\n'
     )
     n = int(_input_n(
         text=f'Введите целое число N: (по умолчанию {_DEFAULT_N})', 
