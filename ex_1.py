@@ -46,13 +46,16 @@ def get_init_data():
 
 
 def init():
+    _example = (
+        '        | √(x + 2),   если 0 < x <= 1\n'
+        'y(x) = <  ln(x - 1),  если x > 1\n'
+        '        | 0,          если x <= 0\n\n'
+        'где -2 <= x <= 2.2;  dx = 0.2\n'
+    )
     print(
-        f'Вычислить на заданном интервале значения функции:\n'
-        f'        | √(x + 2),   если 0 < x <= 1\n'
-        f'y(x) = <  ln(x - 1),  если x > 1\n'
-        f'        | 0,          если x <= 0\n\n'
-        f'где -2 <= x <= 2.2;  dx = 0.2\n\n'
-        f'На печать вывести значения x и y в виде таблицы с заголовком\n'
+        f"{get_text_color('Вычислить на заданном интервале значения функции:', COLOR_WARNING)}\n"
+        f"{get_text_color(_example, COLOR_GREEN)}"
+        f"{get_text_color('На печать вывести значения x и y в виде таблицы с заголовком:', COLOR_WARNING)}\n"
     )
 
     start, end, step = get_init_data()
