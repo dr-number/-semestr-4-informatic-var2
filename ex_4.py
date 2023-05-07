@@ -1,5 +1,8 @@
 from helpers import get_text_color, input_number, is_question, COLOR_WARNING, COLOR_GREEN, COLOR_FAIL
 import random
+import cmath
+
+_FORMAT = '| {:30} | {:40} | {:50} | {:50} |'
 
 _DEFAULT_N = 18
 _MIN_N = -100
@@ -32,9 +35,9 @@ def init():
         min=_MIN_N,
         max=_MAX_N
     ))
-    array = _DEFAULT_ARRAY
+    array_a = _DEFAULT_ARRAY
     if is_question("Хотите изменить исходный массив?"):
-        array = []
+        array_a = []
         size = int(input_number(
             text=f'Введите размер массива: (по умолчанию {_DEFAULT_COUNT_ARRAY})', 
             default_value=_DEFAULT_COUNT_ARRAY,
@@ -43,7 +46,7 @@ def init():
         ))
         if is_question("Хотите ввести массив вручную?"):
             for i in range(0, size):
-                array.append(
+                array_a.append(
                     int(
                         input_number(
                             text=f'Введите значение {i + 1} из {size}', 
@@ -54,13 +57,38 @@ def init():
                 )
         else:
             for i in range(0, size):
-                array.append(int(random.uniform(_MIN_VALUE_ARRAY, _MAX_VALUE_ARRAY)))
+                array_a.append(int(random.uniform(_MIN_VALUE_ARRAY, _MAX_VALUE_ARRAY)))
 
     print(
         f'\n{get_text_color(f"Исходные данные:", COLOR_WARNING)}\n'
         f'N = {get_text_color(str(n), COLOR_GREEN)}\n'
-        f'массив = {get_text_color(array, COLOR_GREEN)}\n'
+        f'массив А = {get_text_color(array_a, COLOR_GREEN)}\n'
     )
+
+    print(get_text_color(_FORMAT.format(*[
+        'Исходное',
+        'Вычиcление (1)',
+        'Вычиcление (2)',
+        'Результат'
+    ]), COLOR_WARNING))
+
+    result_array = []
+    size = len(array_a)
+    for i in range(0, size):
+        result = cmath.sqrt(array_a[i]) - ((i + array_a[i]) / n)
+        result_array.append(result)
+        print(_FORMAT.format(*[
+            f'√{array_a[i]} - (({i} + {array_a[i]}) / {n})',
+            f'{cmath.sqrt(array_a[i])} - (({i + array_a[i]}) / {n})',
+            f'{cmath.sqrt(array_a[i])} - ({i + array_a[i] / n})',
+            f'{result}'
+        ]))
+
+    print(
+        f'\n{get_text_color(f"Конечные данные:", COLOR_GREEN)}\n'
+        f'массив В = {get_text_color(array_a, COLOR_GREEN)}\n'
+    )
+
 
 
 
