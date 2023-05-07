@@ -4,10 +4,6 @@ from helpers import (
 _DEFAULT_DIMENSION = 5
 _MAX_DIMENSION = 100
 
-
-def _transpose(matrix):
-    return [list(i) for i in zip(*matrix)]
-
 def _input_odd_number(text: str, default_value: float = None, max: float = None) -> float:
     while True:
         number = input_number(text=text, default_value=default_value, min=1, max=max)
@@ -57,15 +53,18 @@ def init():
         max=_MAX_DIMENSION
     ))
 
-    matrix = [[1] * dimension] * dimension
+    matrix = [[1] * dimension for _ in range(dimension - 2)]
     outer_rows = [0] * dimension
     index_middle = int(dimension / 2)
     outer_rows[index_middle] = 1
-    matrix[0] = outer_rows
-    matrix[dimension - 1] = outer_rows
-    matrix = _transpose(matrix=matrix)
-    matrix[0] = outer_rows
-    matrix[dimension - 1] = outer_rows
+    matrix.insert(0, outer_rows)
+    matrix.append(outer_rows)
+    
+    for i in range(1, dimension):
+        if i != index_middle and i != dimension - 1:
+            matrix[i][0] = 0
+            matrix[i][dimension - 1] = 0
+
     matrix[index_middle][index_middle] = 0
 
     print(get_text_color('\nКонечная матрица', COLOR_GREEN))
