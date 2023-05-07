@@ -88,3 +88,17 @@
       <img src="https://github.com/dr-number/-semestr-4-informatic-var2/blob/master/for_read_me/ex_3/custom_data.png">
    </p>
 </figure>
+
+<figure>
+   <p align="center">Результат (пустой) с пользовательскими данными</p>
+   <p align="center">
+      <img src="https://github.com/dr-number/-semestr-4-informatic-var2/blob/master/for_read_me/ex_3/empty_result.png">
+   </p>
+</figure>
+
+<figure>
+   <p align="center">Реакция на некорректные данные</p>
+   <p align="center">
+      <img src="https://github.com/dr-number/-semestr-4-informatic-var2/blob/master/for_read_me/ex_3/error_custom_data.png">
+   </p>
+</figure>
