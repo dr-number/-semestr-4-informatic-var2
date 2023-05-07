@@ -60,12 +60,13 @@ def init():
     matrix.insert(0, outer_rows)
     matrix.append(outer_rows)
     
-    for i in range(1, dimension):
-        if i != index_middle and i != dimension - 1:
-            matrix[i][0] = 0
-            matrix[i][dimension - 1] = 0
+    for i in range(1, dimension - 1):
+        matrix[i][0] = 0
+        matrix[i][dimension - 1] = 0
 
     matrix[index_middle][index_middle] = 0
+    matrix[index_middle][0] = 1
+    matrix[index_middle][dimension - 1] = 1
 
     print(get_text_color('\nКонечная матрица', COLOR_GREEN))
     _print_matrix(matrix=matrix)
