@@ -15,6 +15,6 @@
 **задание №1**
 <figure>
    <p align="center">
-      <img src="https://github.com/dr-number/larionov_lab_5_sub_programms/blob/master/screens/6-1.jpg">
+      <img src="https://github.com/dr-number/-semestr-4-informatic-var2/blob/master/for_read_me/ex_1/info.png">
    </p>
 </figure>
